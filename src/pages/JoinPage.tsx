@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Intro } from "../companents/Intro";
 import { decodeInvitation, freshSession, getName, saveSession, setName as saveName } from "../modul";
+import { Input } from "../companents/Input";
 
 function JoinPage() {
     const nav = useNavigate();
@@ -9,7 +10,7 @@ function JoinPage() {
    const encoded = new URLSearchParams(loc.hash.slice(1)).get("s");
    const invitation = encoded ? decodeInvitation(encoded) : null;
    const [name, setName] = useState(getName());
-   
+
     if (!invitation) {
          return (
              <Intro>
@@ -20,21 +21,22 @@ function JoinPage() {
       );
    }
 
+   function handleSaveName () {
+     if (!name.trim() || !invitation) return;
+     const first = { name: invitation.name, likes: invitation.likes };
+     saveName(name.trim());
+    saveSession(freshSession(name.trim(), first));
+     nav("/game");
+   }
+
  return (
         <Intro>
-         <form
+         <div
             className="join-form"
-            onSubmit={(e) => {
-               e.preventDefault();
-               if (!name.trim()) return;
-               const first = { name: invitation.name, likes: invitation.likes };
-               saveName(name.trim());
-               saveSession(freshSession(name.trim(), first));
-               nav("/game");
-            }}
          >
             <h2>{invitation.name} приглашает выбрать кино вместе!</h2>
             <p>Оцените те же 15 фильмов, и мы найдём совпадения</p>
+
             <input
                aria-label="Ваше имя"
                maxLength={40}
@@ -45,7 +47,9 @@ function JoinPage() {
             <button className="primary" disabled={!name.trim()}>
                Присоединиться
             </button>
-         </form>
+
+            <Input value={name} onChange={setName} onClick={handleSaveName} />
+         </div>
       </Intro>
     );
 }

@@ -12,12 +12,12 @@
   height: 100vh;
   background: linear-gradient(
       180deg,
-      brown 0%,
-      rgb(63, 10, 10) 13%,
-      rgb(from hsl(0, 79%, 23%) r g b / 84%) 26%,
-      rgb(from #9ec29b r g b / 69%) 33%,
-      rgb(from #9ec29b r g b / 0%) 60%,
-      rgb(from #9ec29b r g b / 0%) 100%
+      #470a16 0%,
+      #6e0a0a 13%,
+      rgb(from lab(37.29% 30.63 14.44) r g b / 84%) 26%,
+      rgb(from hsl(0, 22%, 57%) r g b / 69%) 33%,
+      rgb(from hsl(0, 24%, 68%) r g b / 0%) 60%,
+      rgb(from hsl(0, 24%, 68%) r g b / 0%) 100%
    );
    z-index: -1;
 }
@@ -33,17 +33,17 @@
 
 .main_title {
   font-size: 35px;
-  color: brown;
+  color: #6e0a0a;
 }
 
 .main_name {
   width: 275px;
   padding: 3px;
   border-radius: 20px;
-  border: 2px solid brown;
+  border: 2px solid #6e0a0a;
   display: flex;
   align-items: center;
-  background-color:rgb(from brown r g b /30%);
+  background-color:rgb(from #6e0a0a r g b /30%);
 }
 
 .main_input {
@@ -59,7 +59,7 @@
   aspect-ratio: 1/1;
   border-radius: 50%;
   background-color: white;
-  color:rgb(133, 30, 30) ;
+  color:#470a16(133, 30, 30) ;
 }
 
 .main_description {
@@ -93,7 +93,7 @@ button:disabled {
    bottom: 50px;
    font-size: 13px;
    text-align: center;
-   color: #fff;
+   color: #470a16;
 }
 .start-actions {
    position: absolute;
@@ -117,7 +117,7 @@ button:disabled {
    padding: 5px 15px;
 }
 .workspace {
-   background: linear-gradient(180deg, #490606 0, #f2f2f2 10%, #fff 24%);
+   background: linear-gradient(180deg, #490606 0, hwb(0 29% 34%) 10%, #fff 24%);
 }
 .header {
    height: 139px;
@@ -178,7 +178,7 @@ button:disabled {
 }
 .progress-track > div {
    height: 100%;
-   background: #73a66e;
+   background: #470a16;
    transition: width 0.25s;
 }
 .swipe-card {
@@ -367,7 +367,7 @@ button:disabled {
 .result-footer button {
    border: 0;
    border-radius: 16px;
-   background: #73a66e;
+   background: #6e0a0a;
    color: white;
    font-size: 13px;
    padding: 7px 3px;
@@ -401,7 +401,7 @@ button:disabled {
 .join-form p,
 .scan-content p {
    font-family: system-ui, sans-serif;
-   color: #4d754a;
+   color: #9b7a85;
    font-size: 14px;
    line-height: 1.5;
 }
@@ -411,7 +411,7 @@ button:disabled {
    background: #fff;
    display: grid;
    place-items: center;
-   border: 1px solid #73a66e;
+   border: 1px solid #470a16;
    padding: 10px;
    margin-top: 25px;
 }
@@ -420,8 +420,8 @@ button:disabled {
    gap: 8px;
    align-items: center;
    justify-content: center;
-   border: 2px solid #73a66e;
-   color: #73a66e;
+   border: 2px solid hsl(0, 24%, 54%);
+   color: #470a16;
    background: #fff;
    padding: 10px 20px;
    border-radius: 24px;
@@ -430,7 +430,7 @@ button:disabled {
 .text-button {
    border: 0;
    background: transparent;
-   color: #416f42;
+   color: #490606;
    text-decoration: underline;
    font-size: 12px;
 }
@@ -444,17 +444,6 @@ button:disabled {
    line-height: 1.55;
    margin: 0;
 }
-.join-form input,
-.scan-content input {
-   width: 100%;
-   border: 2px solid #73a66e;
-   border-radius: 18px;
-   padding: 11px;
-   background: rgba(255, 255, 255, 0.85);
-   outline: none;
-   font-family: system-ui, sans-serif;
-   color: #254925;
-}
 .join-form .primary,
 .scan-content .primary {
    font-size: 16px;
@@ -466,7 +455,7 @@ button:disabled {
 .scan-window {
    width: 260px;
    height: 260px;
-   border: 3px solid #73a66e;
+   border: 3px solid hsl(0, 24%, 54%);
    position: relative;
    overflow: hidden;
    border-radius: 15px;
