@@ -5,7 +5,7 @@ function Header () {
    
    return(
    <header className="header">
-         <span className="logo">Swipey</span>
+         <span className="logo">moviies</span>
          <div className="profile">
             <span title={name}>{name}</span>
             <UserRound size={24} fill="currentColor" />

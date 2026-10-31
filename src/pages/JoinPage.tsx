@@ -37,16 +37,6 @@ function JoinPage() {
             <h2>{invitation.name} приглашает выбрать кино вместе!</h2>
             <p>Оцените те же 15 фильмов, и мы найдём совпадения</p>
 
-            <input
-               aria-label="Ваше имя"
-               maxLength={40}
-               placeholder="Ваше имя"
-               value={name}
-               onChange={(e) => setName(e.target.value)}
-            />
-            <button className="primary" disabled={!name.trim()}>
-               Присоединиться
-            </button>
 
             <Input value={name} onChange={setName} onClick={handleSaveName} />
          </div>

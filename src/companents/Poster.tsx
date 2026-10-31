@@ -1,6 +1,7 @@
 import type { Movie } from "../modul";
 
 function Poster ({movie, small = false} : {movie: Movie; small?: boolean}) {
+    console.log(movie)
     return (
     <div
          className={`poster poster--${movie.id}${small ? " poster--small" : ""}`}

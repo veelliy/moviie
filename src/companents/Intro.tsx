@@ -5,7 +5,7 @@ function Intro({children} : {children: ReactNode}) {
     return (
         <main className="intro">
             <GradientBackground />
-            <div className="intro_content"/> {children} <div/>
+            <div className="intro__content"> {children} </div>
              <footer >Выбери что ты будешь смотреть</footer>
         </main>
     );
